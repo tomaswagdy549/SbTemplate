@@ -1,0 +1,6 @@
+@SbTemplate.Dashboard_HostAddress = http://localhost:5288
+
+GET {{SbTemplate.Dashboard_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
