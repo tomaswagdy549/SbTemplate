@@ -3,20 +3,20 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Mobile.Api", "SbTemplate\SbTemplate.Mobile.Api.csproj", "{3BADB024-326A-413B-9FC6-BC6C510CEC38}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Frontend.Api", "SbTemplate\SbTemplate.Frontend.Api.csproj", "{3BADB024-326A-413B-9FC6-BC6C510CEC38}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Application", "SbTemplate.Application\SbTemplate.Application.csproj", "{A0DBC3ED-29AB-42DD-AE9D-5D3BAB7AFDC9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Core", "SbTemplate.Core\SbTemplate.Core.csproj", "{BA50EFD4-3D09-4343-8F4D-298D33F2BE17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.InfraStructure", "SbTemplate.InfraStructure\SbTemplate.InfraStructure.csproj", "{0A9EC072-E759-4C49-871F-AA7240671188}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Infrastructure", "SbTemplate.InfraStructure\SbTemplate.Infrastructure.csproj", "{0A9EC072-E759-4C49-871F-AA7240671188}"
 	ProjectSection(ProjectDependencies) = postProject
 		{11E2246E-B976-496B-A4C2-727AF180B9C5} = {11E2246E-B976-496B-A4C2-727AF180B9C5}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Dashboard", "SbTemplate.Dashboard\SbTemplate.Dashboard.csproj", "{CFC5829A-6625-4FAA-B8F8-2958C38659BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Dashboard.Api", "SbTemplate.Dashboard\SbTemplate.Dashboard.Api.csproj", "{CFC5829A-6625-4FAA-B8F8-2958C38659BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.FileManagerApi", "SbTemplate.FileManagerApi\SbTemplate.FileManagerApi.csproj", "{569F0DF0-5AEE-4C49-8B99-05E26470E534}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.FileManager.Api", "SbTemplate.FileManagerApi\SbTemplate.FileManager.Api.csproj", "{569F0DF0-5AEE-4C49-8B99-05E26470E534}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SbTemplate.Authorization", "SbTemplate.Authorization\SbTemplate.Authorization.csproj", "{06E92E88-0408-4461-A078-5D1D4D104E01}"
 EndProject
