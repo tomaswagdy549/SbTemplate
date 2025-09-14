@@ -1,6 +1,8 @@
 ﻿using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using SbTemplate.SharedLayer.Interfaces;
+using System.Data;
 namespace Catalog.Application.Behaviours.UnitOfWorkPipeLineBehaviour
 {
     public sealed class UnitOfWorkPipeLineBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
@@ -30,6 +32,16 @@ namespace Catalog.Application.Behaviours.UnitOfWorkPipeLineBehaviour
                     await _unitOfWork.CommitAsync();
                 _logger.LogInformation($"Transaction committed for {typeof(TRequest).Name}");
                 return response;
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                _logger.LogWarning(ex,
+                    "Concurrency conflict detected while handling {RequestName}. Rolling back transaction.",
+                    typeof(TRequest).Name);
+                if (startedHere)
+                    await _unitOfWork.RollbackAsync();
+                throw new Exception(
+                    "The entity was updated by another process. Please reload and try again.", ex);
             }
             catch (Exception ex)
             {
