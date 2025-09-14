@@ -13,6 +13,9 @@ namespace Catalog.Infrastructure.UnitOfWork
         {
             _context = context;
         }
+
+        public bool HasActiveTransaction => throw new NotImplementedException();
+
         public async Task BeginTransactionAsync()
         {
             if (_currentTransaction == null)
