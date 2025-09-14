@@ -1,0 +1,4 @@
+﻿1- the Models which represent the business logic
+2- Interfaces of the business logic like repositories 
+3- Value objects
+4- Enums which is related to the business logic
