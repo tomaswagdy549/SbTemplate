@@ -16,9 +16,9 @@ namespace Catalog.Application.Behaviours.UnitOfWorkPipeLineBehaviour
                 return await next();
             }
             await _unitOfWork.BeginTransactionAsync();
-            await next();
+            var response = await next();
             await _unitOfWork.CommitAsync();
-            return await next();
+            return response;
         }
     }
 }
