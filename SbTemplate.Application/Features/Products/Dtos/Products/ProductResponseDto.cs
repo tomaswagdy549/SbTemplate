@@ -2,7 +2,7 @@
 namespace Catalog.Application.Features.Products.Dtos.Products;
 public record ProductResponseDto
 (
-    string Id, 
+    Guid Id, 
     string Name,
     string Description, 
     string ImageFile,
