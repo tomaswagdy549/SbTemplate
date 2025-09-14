@@ -12,6 +12,7 @@ namespace SbTemplate.SharedLayer.Interfaces
         Task BeginTransactionAsync();
         Task CommitAsync();
         Task RollbackAsync();
+        bool HasActiveTransaction { get; }
 
     }
 }

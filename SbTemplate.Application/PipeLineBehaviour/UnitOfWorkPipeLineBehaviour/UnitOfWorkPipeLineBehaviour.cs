@@ -12,13 +12,26 @@ namespace Catalog.Application.Behaviours.UnitOfWorkPipeLineBehaviour
         public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken cancellationToken)
         {
             if (!typeof(TRequest).Name.Contains("Command", StringComparison.OrdinalIgnoreCase))
-            {
                 return await next();
+            var startedHere = false;
+            if (!_unitOfWork.HasActiveTransaction)
+            {
+                await _unitOfWork.BeginTransactionAsync();
+                startedHere = true;
             }
-            await _unitOfWork.BeginTransactionAsync();
-            var response = await next();
-            await _unitOfWork.CommitAsync();
-            return response;
+            try
+            {
+                var response = await next();
+                if (startedHere)
+                    await _unitOfWork.CommitAsync();
+                return response;
+            }
+            catch
+            {
+                if (startedHere)
+                    await _unitOfWork.RollbackAsync();
+                throw;
+            }
         }
     }
 }
