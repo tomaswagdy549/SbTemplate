@@ -1,0 +1,3 @@
+1- the cqrs commands and queries
+2- the pipleline behaviours for transaction, etc
+3- the interfaces for the repositories and unit of work
